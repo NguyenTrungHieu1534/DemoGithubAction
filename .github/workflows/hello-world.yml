@@ -1,0 +1,19 @@
+name: read file README example    #Workflow name
+
+on:
+  push:
+    branches: [ "main" ]          #Run when code push to "main" 
+
+jobs:
+  thuc_hanh_doc_file:
+    runs-on: ubuntu-latest          #Borrow virtual Ubuntu to run
+
+    steps:
+    - name: Step 1 - Hello
+      run: echo "Yo, welcome!"      #console.log()
+
+    - name: Step 2 - Download code
+      uses: actions/checkout@v6.0.2    #Auto copy to the virtual machine
+
+    - name: Step 3 - Read file
+      run: cat README.md            #Open file README.md to check
